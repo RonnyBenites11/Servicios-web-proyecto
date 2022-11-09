@@ -1,0 +1,65 @@
+﻿@model IEnumerable<appProyectoDSW.Entity.Ruta>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Folder = "Ruta";
+}
+
+<h2 class="text-center">:::: RUTA ::::</h2>
+
+<p>
+    @Html.ActionLink("Agregar Ruta...", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodRuta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AliasRuta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TiempoPromedioRuta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodTerminalOrigen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodTerminalDestino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistanciaKm)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodRuta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AliasRuta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TiempoPromedioRuta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TerminalOrigen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TerminalDestino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DistanciaKm)
+            </td>
+            <td>
+                @Html.ActionLink("Actualizar", "Edit", new { id = item.CodRuta }) |
+                @Html.ActionLink("Ver Detalle", "Details", new { id = item.CodRuta }) |
+                @Html.ActionLink("Dar de Baja", "Delete", new { id = item.CodRuta })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model appProyectoDSW.Entity.TerminalTerrestre
+
+@{
+    ViewBag.Title = "Details";
+    ViewBag.Folder = "Terminal";
+}
+
+<h2 class="text-center">:::: Detalles del Terminal Terrestre COD: @Model.CodTerminal ::::</h2>
+
+<div>
+    <h4>Datos del Terminal Terrestre</h4>
+    <hr />
+    <dl class="dl-horizontal table-bordered">
+        <dt>
+            Codigo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodTerminal)
+        </dd>
+
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreTerminal)
+        </dd>
+
+        <dt>
+            Departamento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomDepartamento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Actualizar", "Edit", new { id = Model.CodTerminal }) |
+    @Html.ActionLink("Regresar al Listado", "Index")
+</p>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home";
+    ViewBag.Folder = "Pagina Principal";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">::: PAGINA PRINCIPAL :::</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>BUS</h2>
+        <p>@Html.ActionLink("CRUD de Buses", "Index", "Bus")</p>
+    </div>
+    <div class="col-md-3">
+        <h2>Terminal</h2>
+        <p>@Html.ActionLink("CRUD de Terminales Terrestres", "Index", "Terminal")</p>
+    </div>
+    <div class="col-md-3">
+        <h2>Ruta</h2>
+        <p>@Html.ActionLink("CRUD de Rutas", "Index", "Ruta")</p>
+    </div>
+    <div class="col-md-3">
+        <h2>Viaje</h2>
+        <p>@Html.ActionLink("CRUD de Viajes", "Index", "Viaje")</p>
+    </div>
+</div>

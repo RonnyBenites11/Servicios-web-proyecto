@@ -1,0 +1,47 @@
+﻿@model IEnumerable<appProyectoDSW.Entity.TerminalTerrestre>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Folder = "Terminal";
+}
+
+<h2 class="text-center">:::: TERMINAL TERRESTRE ::::</h2>
+
+<p>
+    @Html.ActionLink("Agregar Terminal Terrestre...", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Codigo
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Departamento
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodTerminal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreTerminal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomDepartamento)
+            </td>
+            <td>
+                @Html.ActionLink("Actualizar", "Edit", new { id = item.CodTerminal }) |
+                @Html.ActionLink("Ver Detalle", "Details", new { id = item.CodTerminal }) |
+                @Html.ActionLink("Dar de Baja", "Delete", new { id = item.CodTerminal })
+            </td>
+        </tr>
+    }
+
+</table>

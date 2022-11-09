@@ -1,0 +1,59 @@
+﻿@model IEnumerable<appProyectoDSW.Entity.Bus>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Folder = "Bus";
+}
+
+<h2 class="text-center">:::: BUS ::::</h2>
+
+<p>
+    @Html.ActionLink("Agregar Bus...", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Codigo
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Registro)
+        </th>
+        <th>
+            Cantidad Asientos
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodBus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Registro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadAsientos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                @Html.ActionLink("Actualizar", "Edit", new { id = item.CodBus }) |
+                @Html.ActionLink("Ver Detalle", "Details", new { id = item.CodBus }) |
+                @Html.ActionLink("Dar de Baja", "Delete", new { id = item.CodBus })
+            </td>
+        </tr>
+    }
+
+</table>

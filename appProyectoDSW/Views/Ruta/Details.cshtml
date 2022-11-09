@@ -1,0 +1,67 @@
+﻿@model appProyectoDSW.Entity.Ruta
+
+@{
+    ViewBag.Title = "Details";
+    ViewBag.Folder = "Ruta";
+}
+
+<h2 class="text-center">:::: Detalles de la Ruta COD: @Model.CodRuta ::::</h2>
+
+<div>
+    <h4>Datos de la Ruta</h4>
+    <hr />
+    <dl class="dl-horizontal table-bordered">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodRuta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodRuta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AliasRuta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AliasRuta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TiempoPromedioRuta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TiempoPromedioRuta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodTerminalOrigen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TerminalOrigen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodTerminalDestino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TerminalDestino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistanciaKm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistanciaKm)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Actualizar", "Edit", new { id = Model.CodRuta }) |
+    @Html.ActionLink("Regresar al Listado", "Index")
+</p>

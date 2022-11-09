@@ -1,0 +1,65 @@
+﻿@model appProyectoDSW.Entity.Viaje
+
+@{
+    ViewBag.Title = "Delete";
+    ViewBag.Folder = "Viaje";
+}
+
+<h2 class="text-center">:::: ELIMINAR VIAJE ::::</h2>
+
+<h3>Seguro de eliminar el viaje @Model.CodViaje?</h3>
+<div>
+    <h4 class="text-center">Viaje</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodViaje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodViaje)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraPartida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraPartida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraLlegada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraLlegada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodRuta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodBus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alias)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Eliminar..." class="btn btn-success" /> |
+        @Html.ActionLink("Retornar al Listado", "Index")
+    </div>
+    }
+</div>

@@ -1,0 +1,59 @@
+﻿@model appProyectoDSW.Entity.Bus
+
+@{
+    ViewBag.Title = "Details";
+    ViewBag.Folder = "Bus";
+}
+
+<h2 class="text-center">:::: Detalles del Bus COD: @Model.CodBus ::::</h2>
+
+<div>
+    <h4>Datos del Bus</h4>
+    <hr />
+    <dl class="dl-horizontal table-bordered">
+        <dt>
+            Codigo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodBus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Registro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registro)
+        </dd>
+
+        <dt>
+            Cantidad de Asientos
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadAsientos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Actualizar", "Edit", new { id = Model.CodBus }) |
+    @Html.ActionLink("Regresar al Listado", "Index")
+</p>

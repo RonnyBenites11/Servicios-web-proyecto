@@ -1,0 +1,73 @@
+﻿@model appProyectoDSW.Entity.Ruta
+
+@{
+    ViewBag.Title = "Delete";
+    ViewBag.Folder = "Ruta";
+}
+
+<h2 class="text-center">:::: ELIMINAR RUTA ::::</h2>
+
+<h3>Seguro de eliminar la ruta @Model.AliasRuta?</h3>
+<div>
+    <h4 class="text-center">Ruta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodRuta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodRuta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AliasRuta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AliasRuta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TiempoPromedioRuta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TiempoPromedioRuta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodTerminalOrigen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TerminalOrigen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodTerminalDestino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TerminalDestino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistanciaKm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistanciaKm)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Eliminar..." class="btn btn-success" /> |
+        @Html.ActionLink("Retornar al Listado", "Index")
+    </div>
+    }
+</div>

@@ -1,0 +1,49 @@
+﻿@model appProyectoDSW.Entity.TerminalTerrestre
+
+@{
+    ViewBag.Title = "Delete";
+    ViewBag.Folder = "Terminal";
+}
+
+<h2 class="text-center">:::: ELIMINAR TERMINAL TERRESTRE ::::</h2>
+
+<h3>Seguro de eliminar el terminal @Model.NombreTerminal?</h3>
+<div>
+    <h4 class="text-center">Terminal Terrestre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Codigo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodTerminal)
+        </dd>
+
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreTerminal)
+        </dd>
+
+        <dt>
+            Departamento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomDepartamento)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Eliminar..." class="btn btn-success" /> |
+        @Html.ActionLink("Retornar al Listado", "Index")
+    </div>
+    }
+</div>

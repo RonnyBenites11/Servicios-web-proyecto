@@ -1,0 +1,59 @@
+﻿@model IEnumerable<appProyectoDSW.Entity.Viaje>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Folder = "Viaje";
+}
+
+<h2 class="text-center">:::: VIAJE ::::</h2>
+
+<p>
+    @Html.ActionLink("Agregar Viaje...", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodViaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHoraPartida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHoraLlegada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodRuta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodBus)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodViaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHoraPartida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHoraLlegada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Registro)
+            </td>
+            <td>
+                @Html.ActionLink("Actualizar", "Edit", new { id = item.CodViaje }) |
+                @Html.ActionLink("Ver Detalle", "Details", new { id = item.CodViaje }) |
+                @Html.ActionLink("Dar de Baja", "Delete", new { id = item.CodViaje })
+            </td>
+        </tr>
+    }
+
+</table>
